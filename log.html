@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 400px;
+            max-width: 100%;
+        }
+
+        .form-container {
+            padding: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .switch-form {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .switch-form a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-- Login Form -->
+            <form id="login-form">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="login-username" required>
+
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signup-form" style="display: none;">
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" name="signup-username" required>
+
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="signup-password" required>
+
+                <button type="submit">Signup</button>
+            </form>
+
+            <!-- Switch between Login and Signup -->
+            <div class="switch-form">
+                <p>Don't have an account? <a href="#" onclick="toggleForm()">Signup here</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            var loginForm = document.getElementById("login-form");
+            var signupForm = document.getElementById("signup-form");
+
+            if (loginForm.style.display === "none") {
+                loginForm.style.display = "block";
+                signupForm.style.display = "none";
+            } else {
+                loginForm.style.display = "none";
+                signupForm.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
